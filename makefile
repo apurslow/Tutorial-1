@@ -1,6 +1,6 @@
 CC=gcc
 CFLAGS=-pthread -I. -Wall
-binaries=exec
+binaries=exec.c
 all: $(binaries)
 clean:
 	$(RM) -f $(binaries) *.o
