@@ -23,11 +23,21 @@ char ** args = malloc( ARGCNT * sizeof(char*));
 *(args + 4) = NULL;
 printf("cmd->");
 fscanf(stdin, "%s", cmd);
+printf("arg1->");
+fscanf(stdin, "%s", arg1);
+printf("arg2->");
+fscanf(stdin, "%s", arg2);
+printf("file->");
+fscanf(stdin, "%s", file);
+
 printf("char %lu=%d\n",strlen(cmd),cmd[strlen(cmd)]);
 for (int i=0;i<ARGCNT;i++) printf("i=%d args[i]=%s\n",i,*(args + i));
 
 
-int execvp(const char *file, char *const argv[]);
+int status = execvp(args[0], args);
+printf("STATUS CODE=%d\n",status);
+
+
 
 return 0;
 }
